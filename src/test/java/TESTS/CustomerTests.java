@@ -7,6 +7,8 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvFileSource;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,9 +32,10 @@ public class CustomerTests {
 
     }
 
-    @Test
-    public void createCustomerTest(){
-        Customer newCustomer=new Customer("mateusz","janusz","s89z@jan3u3sz54.pl","mw14uszek1","mateuszek2");
+    @ParameterizedTest
+    @CsvFileSource(resources = "/dataTest.csv",numLinesToSkip = 1)
+    public void createCustomerTest(String firstName,String lastName,String email,String username,String password){
+        Customer newCustomer=new Customer(firstName,lastName,email,username,password);
         System.out.println(newCustomer);
         customerEndpoint.createCustomer(newCustomer);
         Assertions.assertEquals(201,customerEndpoint.getLastStatusCode(),customerEndpoint.responseMessage());

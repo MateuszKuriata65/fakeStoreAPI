@@ -11,7 +11,8 @@ I created this for tests FakeStore Application (developed by testelka.pl) who is
 # Concepts Included
 * POJO's classes;
 * Tests set up using configuration file;
-* Endpoint class.
+* Endpoint class;
+* Test data from CSV file.
 
 # Run
 To run test use simple command

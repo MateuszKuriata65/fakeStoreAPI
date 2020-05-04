@@ -1,4 +1,4 @@
-firstName,lastName,email,username,password
-Mateusz,XXX,test2@testo.pl,klient12,1234
-Janusz,YYY,test21@test.pl,klient22,12345
-Mariusz,ZZZ,test22@test.pl,klient32,12345
+firstName,lastName,email          ,username ,password
+Mateusz  ,XXX     ,test27@testo.pl,klient112,1234
+Janusz   ,YYY     ,test217@test.pl,klient212,12345
+Mariusz  ,ZZZ     ,test722@test.pl,klient312,12345

@@ -1,4 +1,4 @@
-package Utils;
+package utils;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -14,29 +14,31 @@ public class PropertiesReader {
     private static String URL;
     private Properties properties;
 
-    public PropertiesReader(String propertiesLocation){
+    public PropertiesReader(String propertiesLocation) {
         loadFile(propertiesLocation);
         loadData();
     }
 
+    //method who load properties file with using properties location path
     private void loadFile(String propertiesLocation) {
         properties = new Properties();
         try {
             properties.load(new FileInputStream(propertiesLocation));
         } catch (IOException e) {
             e.printStackTrace();
-            System.out.println("There is something wrong with the file. Does it exist? "+
+            System.out.println("There is something wrong with the file. Does it exist? " +
                     "File location: " + propertiesLocation);
         }
     }
 
-    private void loadData(){
-        username=properties.getProperty("username");
-        password=properties.getProperty("password");
-        port=Integer.parseInt(properties.getProperty("port"));
-        basePath=properties.getProperty("basePath");
-        URI=properties.getProperty("URI");
-        URL=properties.getProperty("URL");
+    //method who is loading data from properties file
+    private void loadData() {
+        username = properties.getProperty("username");
+        password = properties.getProperty("password");
+        port = Integer.parseInt(properties.getProperty("port"));
+        basePath = properties.getProperty("basePath");
+        URI = properties.getProperty("URI");
+        URL = properties.getProperty("URL");
     }
 
     public static String getUsername() {

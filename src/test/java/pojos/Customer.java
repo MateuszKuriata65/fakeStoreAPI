@@ -1,8 +1,11 @@
-package POJOs;
+package pojos;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Customer {
+    // POJO class who is used to serialization/deserialization object to JSON
+
     private int id;
     private String first_name;
     private String last_name;
@@ -19,7 +22,7 @@ public class Customer {
         this.last_name = last_name;
         this.email = email;
         this.username = username;
-        this.password=password;
+        this.password = password;
     }
 
     public int getId() {
